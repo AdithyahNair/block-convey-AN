@@ -20,10 +20,8 @@ export const PrismPage: React.FC = () => {
           </button>
         </div>
 
-        {/* Background Elements */}
+        {/* Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0d_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0d_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-dark/30 rounded-full blur-[128px] -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-light/30 rounded-full blur-[128px] translate-x-1/2 translate-y-1/2" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
