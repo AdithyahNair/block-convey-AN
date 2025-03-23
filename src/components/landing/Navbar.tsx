@@ -16,7 +16,6 @@ const navItems = [
           "Ensure fairness and compliance in credit scoring with real-time bias detection and explainable decision-making tools",
         path: "/solutions#credit-risk-assessment",
       },
-
       {
         title: "Insurance Claims Module",
         description:
@@ -150,30 +149,35 @@ export const Navbar: React.FC = () => {
 
   return (
     <NavContainer>
-      <div className="flex items-center justify-between">
-        <NavLogo />
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center justify-between flex-1 pl-8">
-          <NavLinks items={navItems} />
-          <NavActions />
+      <div className="flex items-center justify-between h-16 px-4">
+        <div className="flex items-center gap-8">
+          <NavLogo />
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center">
+            <NavLinks items={navItems} />
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-2 md:hidden text-gray-600 hover:text-gray-900"
-        >
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:block">
+            <NavActions />
+          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-gray-600 hover:text-gray-900"
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 pb-4">
+        <div className="lg:hidden mt-2 pb-4 px-4">
           <div className="border-t pt-4">
             <NavLinks items={navItems} />
-            <div className="mt-4 px-2">
+            <div className="mt-4">
               <NavActions />
             </div>
           </div>
