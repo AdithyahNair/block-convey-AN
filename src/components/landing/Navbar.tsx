@@ -88,25 +88,14 @@ const navItems = [
     mainPath: "/resources",
     subitems: [
       {
-        title: "AI Governance Monitor",
-        description: "Track developments in AI governance and compliance",
+        title: "Blog",
+        description: "Latest insights and updates from Block Convey",
+        path: "https://blog.blockconvey.com",
+      },
+      {
+        title: "Knowledge Base",
+        description: "Comprehensive guides and documentation for AI governance",
         path: "/resources#hero",
-      },
-      {
-        title: "Insights on AI in Finance",
-        description:
-          "Latest trends and developments in AI-powered financial services",
-        path: "/resources#insights",
-      },
-      {
-        title: "Blockchain in Finance",
-        description: "How blockchain technology transforms financial services",
-        path: "/resources#blockchain",
-      },
-      {
-        title: "Tools and Frameworks",
-        description: "Essential resources for implementing AI governance",
-        path: "/resources#tools",
       },
     ],
   },
