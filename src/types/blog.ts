@@ -3,10 +3,11 @@
 export interface BlogPost {
   id: string;
   title: string;
-  content: string;
+  content?: string; // Keep for backward compatibility
+  contentSection?: Section[]; // New field for structured content
   summary: string;
-  createdAt: any; // Firestore Timestamp
-  updatedAt: any; // Firestore Timestamp
+  createdAt: any;
+  updatedAt: any;
   author: string;
   tags: string[];
   categories: string[];
@@ -37,6 +38,13 @@ export interface NavDropdownProps {
   isOpen: boolean;
   onToggle: () => void;
   onItemClick: (path?: string) => void;
+}
+
+export interface Section {
+  type: "introduction" | "heading" | "paragraph" | "list-item";
+  content: string;
+  level?: number;
+  sectionId?: string | number;
 }
 
 // We don't need BlogDetailParams anymore as React Router v6 infers types
