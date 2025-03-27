@@ -10,6 +10,8 @@ import { ConsultingPage } from "./pages/ConsultingPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
 import { PrismPage } from "./pages/PrismPage";
+import { BlogListPage } from "./pages/BlogListPage";
+import { BlogDetailPage } from "./pages/BlogDetailPage";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/prism" element={<PrismPage />} />
+        {/* Add new blog routes */}
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
       </Routes>
     </Router>
   );

@@ -2,17 +2,7 @@ import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavDropdown } from "./NavDropdown";
 import { useClickOutside } from "../../../hooks/useClickOutside";
-
-interface NavLinksProps {
-  items: Array<{
-    label: string;
-    subitems: Array<{
-      title: string;
-      description: string;
-      path?: string;
-    }>;
-  }>;
-}
+import { NavLinksProps } from "../../../types/blog";
 
 export const NavLinks: React.FC<NavLinksProps> = ({ items }) => {
   const navigate = useNavigate();
