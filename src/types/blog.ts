@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 // Blog data interfaces
 
 export interface BlogPost {
@@ -6,8 +8,8 @@ export interface BlogPost {
   content?: string; // Keep for backward compatibility
   contentSection?: Section[]; // New field for structured content
   summary: string;
-  createdAt: any;
-  updatedAt: any;
+  createdAt: Timestamp;
+  updatedAt: Timestamp;
   author: string;
   tags: string[];
   categories: string[];
