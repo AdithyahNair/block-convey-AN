@@ -30,7 +30,7 @@ function App() {
         <Route path="/prism" element={<PrismPage />} />
         {/* Add new blog routes */}
         <Route path="/blogs" element={<BlogListPage />} />
-        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        <Route path="/blogs/:slug" element={<BlogDetailPage />} />
       </Routes>
     </Router>
   );

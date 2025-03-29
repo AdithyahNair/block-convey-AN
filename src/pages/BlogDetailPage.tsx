@@ -124,7 +124,7 @@ export const BlogDetailPage: React.FC = () => {
       const match = part.match(/^(\d+(?:\.\d+)*)\.\s+([^\n]+)([\s\S]*)$/);
 
       if (match) {
-        const [_, numberPart, title, sectionContent] = match;
+        const [, numberPart, title, sectionContent] = match;
         const headerText = `${numberPart}. ${title}`;
 
         // Determine the header level based on the number format
@@ -298,14 +298,38 @@ export const BlogDetailPage: React.FC = () => {
 
       <main className="relative pt-24">
         {/* Back to articles link at top */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-          <Link
-            to="/blogs"
-            className="inline-flex items-center text-gray-600 hover:text-brand transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to all articles
-          </Link>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between py-8">
+            <Link
+              to="/blogs"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-brand transition-all duration-300"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to all articles
+            </Link>
+
+            {/* Tags moved to top right */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                <Tag className="h-5 w-5 text-brand" />
+                <span className="font-medium text-gray-700">Tags:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {blog.tags && blog.tags.length > 0 ? (
+                  blog.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm font-medium hover:bg-brand-light/30 transition-colors cursor-pointer"
+                    >
+                      {tag}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-gray-500 text-sm">No tags</span>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Hero Section with Title */}
@@ -327,6 +351,18 @@ export const BlogDetailPage: React.FC = () => {
               <Clock className="h-4 w-4" />
               <span>{estimateReadTime(sections)} min read</span>
             </div>
+            <button
+              onClick={handleShare}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 text-brand hover:bg-brand/20 transition-colors"
+            >
+              <Share2 className="h-4 w-4" />
+              Share Article
+            </button>
+            {showShareTooltip && (
+              <div className="absolute mt-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg">
+                Link copied to clipboard!
+              </div>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-8">
@@ -353,7 +389,7 @@ export const BlogDetailPage: React.FC = () => {
         </div>
 
         {/* Content Section with New Layout */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Table of Contents Sidebar - New Design */}
             <div className="lg:w-1/4 lg:max-w-xs">
@@ -394,44 +430,6 @@ export const BlogDetailPage: React.FC = () => {
                     );
                   })}
                 </nav>
-
-                {/* Share Button */}
-                <div className="mt-8 relative">
-                  <button
-                    onClick={handleShare}
-                    className="w-full flex items-center justify-center gap-2 bg-brand text-white px-4 py-3 rounded-lg hover:bg-brand-dark transition-colors"
-                  >
-                    <Share2 className="h-5 w-5" />
-                    Share Article
-                  </button>
-                  {showShareTooltip && (
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-4 py-2 bg-gray-900 text-white text-sm rounded-lg">
-                      Link copied to clipboard!
-                    </div>
-                  )}
-                </div>
-
-                {/* Tags */}
-                <div className="mt-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Tag className="h-5 w-5 text-brand" />
-                    <h3 className="font-semibold text-gray-900">Tags</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {blog.tags && blog.tags.length > 0 ? (
-                      blog.tags.map((tag, index) => (
-                        <span
-                          key={index}
-                          className="bg-brand-light/20 text-brand px-3 py-1 rounded-full text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="text-gray-500 text-sm">No tags</span>
-                    )}
-                  </div>
-                </div>
               </div>
             </div>
 

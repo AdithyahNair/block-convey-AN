@@ -170,7 +170,7 @@ export const BlogListPage: React.FC = () => {
                   transition={{ delay: 0.1 * index }}
                 >
                   <Link
-                    to={`/blog/${blog.slug}`}
+                    to={`/blogs/${blog.slug}`}
                     className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-brand-light/10"
                   >
                     <div className="flex flex-col lg:flex-row">
