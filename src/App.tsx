@@ -29,7 +29,7 @@ function App() {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/prism" element={<PrismPage />} />
         {/* Add new blog routes */}
-        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blogs" element={<BlogListPage />} />
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
       </Routes>
     </Router>

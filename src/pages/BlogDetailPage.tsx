@@ -277,7 +277,7 @@ export const BlogDetailPage: React.FC = () => {
           <div className="text-center">
             <p className="text-red-500 mb-4">{error}</p>
             <Link
-              to="/blog"
+              to="/blogs"
               className="inline-flex items-center text-brand hover:text-brand-dark transition-colors"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -300,7 +300,7 @@ export const BlogDetailPage: React.FC = () => {
         {/* Back to articles link at top */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
           <Link
-            to="/blog"
+            to="/blogs"
             className="inline-flex items-center text-gray-600 hover:text-brand transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />

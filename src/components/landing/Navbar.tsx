@@ -90,7 +90,7 @@ const navItems = [
       {
         title: "Blog",
         description: "Latest insights and updates from Block Convey",
-        path: "/blog",
+        path: "/blogs",
       },
       {
         title: "Knowledge Base",
