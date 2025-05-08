@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Pause, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AnnouncementBanner } from "../common/AnnouncementBanner";
 
 const descriptions = [
   {
@@ -95,9 +94,7 @@ export const Hero: React.FC = () => {
         {/* Adjusted the top padding to match the navbar spacing */}
         <div className="pt-32">
           {/* Removed the mb-16 from the announcement banner div */}
-          <div>
-            <AnnouncementBanner />
-          </div>
+
           {/* Added pt-24 to match the spacing from navbar to banner */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
